@@ -35,75 +35,83 @@
     .golf-icon { width:34px; height:34px; background:var(--green); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:17px; flex-shrink:0; }
     .event-name { font-family:'Bebas Neue',sans-serif; font-size:22px; letter-spacing:1px; line-height:1; }
     .event-sub { font-size:11px; color:var(--text2); margin-top:2px; }
-    .live-badge { display:flex; align-items:center; gap:5px; background:var(--red-dim); border:1px solid var(--red); color:var(--red); font-size:10px; font-weight:600; letter-spacing:1px; padding:4px 9px; border-radius:20px; white-space:nowrap; }
+    .live-badge { display:flex; align-items:center; gap:5px; background:var(--red-dim); border:1px solid var(--red); color:var(--red); font-size:10px; font-weight:600; letter-spacing:1px; padding:4px 9px; border-radius:20px; }
     .live-dot { width:6px; height:6px; background:var(--red); border-radius:50%; animation:pulse 1.4s ease-in-out infinite; }
     @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.3;transform:scale(0.6)} }
     .status-bar { display:flex; align-items:center; justify-content:space-between; }
     .round-pill { background:var(--bg3); border:1px solid var(--border-bright); color:var(--text2); font-size:11px; font-weight:500; padding:3px 10px; border-radius:20px; }
     .last-update { font-size:10px; color:var(--muted); font-family:'DM Mono',monospace; }
 
-    /* PODIUM */
+    /* PODIO */
     .podium-section { padding:16px 16px 8px; }
     .section-label { font-size:10px; font-weight:600; letter-spacing:2px; color:var(--muted); text-transform:uppercase; margin-bottom:10px; }
-
-    .podium { display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px; }
-
-    .podium-card { border-radius:14px; padding:12px 10px; text-align:center; position:relative; overflow:hidden; }
-    .podium-card.p1 { background:linear-gradient(160deg,#1a1500,#0f1200); border:1px solid rgba(245,200,66,0.35); grid-column:2; grid-row:1; }
-    .podium-card.p2 { background:linear-gradient(160deg,#141a14,#0c120c); border:1px solid rgba(192,200,208,0.25); grid-column:1; grid-row:1; align-self:end; }
-    .podium-card.p3 { background:linear-gradient(160deg,#161008,#0e0c08); border:1px solid rgba(205,127,50,0.25); grid-column:3; grid-row:1; align-self:end; }
-
-    .podium-medal { font-size:22px; margin-bottom:4px; }
-    .podium-name { font-family:'Bebas Neue',sans-serif; font-size:18px; letter-spacing:0.5px; line-height:1.1; margin-bottom:6px; }
-    .podium-card.p1 .podium-name { font-size:22px; color:var(--gold); }
+    .podium { display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px; align-items:end; }
+    .podium-card { border-radius:14px; padding:12px 8px; text-align:center; position:relative; overflow:hidden; }
+    .podium-card.p1 { background:linear-gradient(160deg,#1a1500,#0f1200); border:1px solid rgba(245,200,66,0.4); }
+    .podium-card.p2 { background:linear-gradient(160deg,#141a14,#0c120c); border:1px solid rgba(192,200,208,0.25); }
+    .podium-card.p3 { background:linear-gradient(160deg,#161008,#0e0c08); border:1px solid rgba(205,127,50,0.25); }
+    .podium-medal { font-size:20px; margin-bottom:4px; }
+    .podium-name { font-family:'Bebas Neue',sans-serif; font-size:17px; letter-spacing:0.5px; line-height:1.1; margin-bottom:6px; }
+    .podium-card.p1 .podium-name { font-size:20px; color:var(--gold); }
     .podium-card.p2 .podium-name { color:var(--silver); }
     .podium-card.p3 .podium-name { color:var(--bronze); }
-    .podium-score { font-family:'Bebas Neue',sans-serif; font-size:32px; line-height:1; }
-    .podium-card.p1 .podium-score { font-size:40px; color:var(--gold); }
-    .podium-card.p2 .podium-score { color:var(--silver); }
-    .podium-card.p3 .podium-score { color:var(--bronze); }
-    .podium-status { font-size:10px; margin-top:5px; }
-    .status-en-carrera { color:var(--green); }
-    .status-eliminado { color:var(--red); }
+    .podium-score { font-family:'Bebas Neue',sans-serif; font-size:36px; line-height:1; }
+    .podium-card.p1 .podium-score { font-size:44px; color:var(--gold); }
+    .podium-card.p2 .podium-score { color:var(--silver); font-size:32px; }
+    .podium-card.p3 .podium-score { color:var(--bronze); font-size:32px; }
 
     /* TABLA */
     .table-section { padding:8px 0 32px; }
-    .table-header { display:grid; grid-template-columns:44px 1fr 60px 90px; padding:8px 16px; border-top:1px solid var(--border); border-bottom:1px solid var(--border); background:var(--bg2); }
-    .th { font-size:9px; font-weight:600; letter-spacing:1.5px; color:var(--muted); text-transform:uppercase; text-align:center; }
-    .th:nth-child(2) { text-align:left; }
+    .tap-hint { font-size:10px; color:var(--muted); text-align:center; padding:6px 0 4px; }
 
-    .player-row { display:grid; grid-template-columns:44px 1fr 60px 90px; padding:0 16px; border-bottom:1px solid var(--border); align-items:stretch; animation:fadeIn 0.3s ease both; cursor:pointer; }
+    /* Header fijo de la tabla */
+    .table-header {
+      display:grid;
+      grid-template-columns: 40px 90px 56px 1fr 1fr 1fr 1fr;
+      padding:8px 12px;
+      border-top:1px solid var(--border);
+      border-bottom:1px solid var(--border);
+      background:var(--bg2);
+      position:sticky;
+      top:88px;
+      z-index:50;
+    }
+    .th { font-size:9px; font-weight:600; letter-spacing:1px; color:var(--muted); text-transform:uppercase; text-align:center; }
+    .th.left { text-align:left; }
+
+    /* Fila de jugador */
+    .player-row {
+      display:grid;
+      grid-template-columns: 40px 90px 56px 1fr 1fr 1fr 1fr;
+      padding:10px 12px;
+      border-bottom:1px solid var(--border);
+      align-items:center;
+      animation:fadeIn 0.3s ease both;
+      cursor:pointer;
+    }
     @keyframes fadeIn { from{opacity:0;transform:translateY(3px)} to{opacity:1;transform:translateY(0)} }
     .player-row:active { background:var(--bg3); }
-    .player-row.eliminado { opacity:0.45; }
 
-    .pos-cell { display:flex; align-items:center; justify-content:center; padding:12px 0; }
-    .pos-num { font-family:'DM Mono',monospace; font-size:13px; font-weight:500; color:var(--text2); }
+    .pos-cell { text-align:center; }
+    .pos-num { font-family:'DM Mono',monospace; font-size:13px; color:var(--text2); }
     .pos-medal { font-size:18px; }
 
-    .info-cell { padding:12px 8px 12px 0; overflow:hidden; }
-    .player-name { font-size:14px; font-weight:600; color:var(--text); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; line-height:1.2; }
-    .player-golfers { font-size:10px; color:var(--muted); margin-top:3px; line-height:1.4; }
+    .name-cell { overflow:hidden; }
+    .player-name { font-size:13px; font-weight:600; color:var(--text); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
 
-    .score-cell-wrap { display:flex; align-items:center; justify-content:center; padding:12px 4px; }
-    .score-pill { font-family:'Bebas Neue',sans-serif; font-size:20px; padding:2px 10px; border-radius:8px; }
+    .score-cell-wrap { display:flex; align-items:center; justify-content:center; }
+    .score-pill { font-family:'Bebas Neue',sans-serif; font-size:18px; padding:2px 8px; border-radius:7px; }
     .score-pill.neg { background:var(--green-dim); color:var(--green); }
     .score-pill.pos { background:var(--red-dim); color:var(--red); }
     .score-pill.even { background:rgba(255,255,255,0.05); color:var(--text2); }
 
-    .estado-cell { display:flex; align-items:center; justify-content:center; padding:12px 4px; }
-    .estado-badge { font-size:10px; font-weight:600; letter-spacing:0.5px; padding:3px 8px; border-radius:20px; white-space:nowrap; }
-    .estado-badge.en-carrera { background:var(--green-dim); color:var(--green); border:1px solid rgba(0,217,126,0.3); }
-    .estado-badge.eliminado { background:var(--red-dim); color:var(--red); border:1px solid rgba(255,64,85,0.3); }
-
-    /* EXPANDIDO: detalle jugadores */
-    .detail-row { display:none; padding:0 16px 12px; border-bottom:1px solid var(--border); background:var(--bg2); }
-    .detail-row.open { display:block; }
-    .detail-grid { display:grid; grid-template-columns:1fr 1fr; gap:6px; }
-    .detail-item { background:var(--bg3); border-radius:8px; padding:8px 10px; }
-    .detail-label { font-size:9px; color:var(--muted); letter-spacing:1px; text-transform:uppercase; margin-bottom:2px; }
-    .detail-score { font-family:'DM Mono',monospace; font-size:13px; font-weight:500; color:var(--text); }
-    .detail-golfer { font-size:11px; color:var(--text2); margin-top:1px; }
+    /* Celda de cada jugador elegido */
+    .jug-cell { padding:0 3px; overflow:hidden; }
+    .jug-score { font-family:'DM Mono',monospace; font-size:11px; font-weight:600; }
+    .jug-score.neg { color:var(--green); }
+    .jug-score.pos { color:var(--red); }
+    .jug-score.even { color:var(--text2); }
+    .jug-name { font-size:9px; color:var(--muted); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; margin-top:1px; }
 
     /* LOADING / ERROR */
     .loading { display:flex; flex-direction:column; align-items:center; justify-content:center; padding:60px 20px; gap:16px; }
@@ -111,9 +119,7 @@
     @keyframes spin { to{transform:rotate(360deg)} }
     .loading-text { color:var(--muted); font-size:13px; }
     .error-box { margin:20px 16px; background:var(--red-dim); border:1px solid var(--red); border-radius:12px; padding:16px; color:var(--red); font-size:13px; text-align:center; line-height:1.5; }
-    .footer { padding:16px; text-align:center; color:var(--muted); font-size:10px; letter-spacing:0.5px; border-top:1px solid var(--border); }
-
-    .tap-hint { font-size:10px; color:var(--muted); text-align:center; padding:6px 0 2px; letter-spacing:0.5px; }
+    .footer { padding:16px; text-align:center; color:var(--muted); font-size:10px; border-top:1px solid var(--border); }
   </style>
 </head>
 <body>
@@ -135,23 +141,24 @@
   </div>
 </div>
 
-<!-- PODIO TOP 3 -->
 <div class="podium-section">
   <div class="section-label">Podio</div>
   <div class="podium" id="podium">
-    <div class="loading"><div class="spinner"></div></div>
+    <div class="loading" style="grid-column:1/-1"><div class="spinner"></div></div>
   </div>
 </div>
 
-<!-- TABLA COMPLETA -->
 <div class="table-section">
-  <div class="section-label" style="padding:0 16px 4px">Clasificación</div>
-  <div class="tap-hint">Tocá una fila para ver el detalle</div>
+  <div class="section-label" style="padding:0 12px 2px">Clasificación</div>
+  <div class="tap-hint">Tocá una fila para ver detalle</div>
   <div class="table-header">
     <div class="th">POS</div>
-    <div class="th" style="text-align:left">PARTICIPANTE</div>
+    <div class="th left">PARTICIPANTE</div>
     <div class="th">SCORE</div>
-    <div class="th">ESTADO</div>
+    <div class="th">JUG 1</div>
+    <div class="th">JUG 2</div>
+    <div class="th">JUG 3</div>
+    <div class="th">JUG 4</div>
   </div>
   <div id="tableBody">
     <div class="loading"><div class="spinner"></div><div class="loading-text">Cargando...</div></div>
@@ -163,132 +170,88 @@
 <script>
   const SHEET_URL = "https://script.google.com/macros/s/AKfycbwOSq2NRKYQfx1g0Seaoq4m9G_iynkxefY2_XFqQFx5UQJv-BgtxNWnxCgV5Ufvm2Pyag/exec";
 
-  // Columnas (0-based): A=0 POS, B=1 PARTICIPANTE, C=2 #, D=3 TOP3SCORE, E=4 ESTADO, F=5 JUG1, G=6 JUG2, H=7 JUG3, I=8 JUG4
-  const C = { POS:0, NOMBRE:1, NUM:2, SCORE:3, ESTADO:4, J1:5, J2:6, J3:7, J4:8 };
+  // A=0 POS | B=1 PARTICIPANTE | C=2 TOP3SCORE | D=3 ESTADO | E=4 JUG1 | F=5 JUG2 | G=6 JUG3 | H=7 JUG4
+  const C = { POS:0, NOMBRE:1, SCORE:2, ESTADO:3, J1:4, J2:5, J3:6, J4:7 };
 
   function fmt(v) {
     if (v === null || v === undefined) return '-';
-    const s = String(v).trim();
-    return s === '' ? '-' : s;
+    return String(v).trim() || '-';
+  }
+
+  // Parsear celda de jugador: viene como "-3 (Ludvig Åberg)" → { score: "-3", name: "Ludvig Åberg" }
+  function parseJugador(val) {
+    const s = fmt(val);
+    if (s === '-') return { score: '-', name: '-' };
+    const m = s.match(/^([+\-]?\d+|E)\s*\((.+)\)$/);
+    if (m) return { score: m[1], name: m[2] };
+    // Si no matchea el patrón, devolver todo como nombre
+    return { score: '-', name: s };
   }
 
   function scoreClass(val) {
-    const s = fmt(val);
-    if (s === '-') return 'even';
-    const n = parseFloat(s);
-    if (isNaN(n)) return 'even';
-    if (n < 0) return 'neg';
-    if (n > 0) return 'pos';
-    return 'even';
+    const n = parseFloat(String(val));
+    if (isNaN(n) || val === 'E') return 'even';
+    return n < 0 ? 'neg' : n > 0 ? 'pos' : 'even';
   }
 
   function fmtScore(val) {
     const s = fmt(val);
     const n = parseFloat(s);
-    if (isNaN(n)) return s;
+    if (isNaN(n)) return s === '-' ? 'E' : s;
     if (n === 0) return 'E';
     return n > 0 ? '+' + n : String(n);
   }
 
-  function isElim(estado) {
-    return String(estado).toLowerCase().includes('elim');
-  }
-
-  function podiumScoreColor(pos) {
-    if (pos === 1) return 'var(--gold)';
-    if (pos === 2) return 'var(--silver)';
-    return 'var(--bronze)';
-  }
-
   function renderPodium(players) {
-    const top3 = players.slice(0, 3);
-    // Orden visual: 2do - 1ro - 3ro
-    const order = [top3[1], top3[0], top3[2]].filter(Boolean);
-    const classes = top3[1] ? ['p2','p1','p3'] : ['p1','p3'];
-    const medals = ['🥈','🥇','🥉'];
-    const posNums = [2, 1, 3];
-
-    document.getElementById('podium').innerHTML = order.map((p, i) => {
-      const cls = classes[i];
-      const medal = medals[i];
-      const score = fmtScore(p[C.SCORE]);
-      const elim = isElim(p[C.ESTADO]);
-      const color = cls === 'p1' ? 'var(--gold)' : cls === 'p2' ? 'var(--silver)' : 'var(--bronze)';
+    const top = players.slice(0, 3);
+    // Layout: 2do izq, 1ro centro, 3ro der
+    const layout = [
+      { p: top[1], cls: 'p2', medal: '🥈' },
+      { p: top[0], cls: 'p1', medal: '🥇' },
+      { p: top[2], cls: 'p3', medal: '🥉' },
+    ];
+    document.getElementById('podium').innerHTML = layout.map(({ p, cls, medal }) => {
+      if (!p) return '<div></div>';
       return `
         <div class="podium-card ${cls}">
           <div class="podium-medal">${medal}</div>
           <div class="podium-name">${fmt(p[C.NOMBRE])}</div>
-          <div class="podium-score" style="color:${color}">${score}</div>
-          <div class="podium-status ${elim ? 'status-eliminado' : 'status-en-carrera'}">
-            ${elim ? '❌ Eliminado' : '✅ En carrera'}
-          </div>
+          <div class="podium-score">${fmtScore(p[C.SCORE])}</div>
         </div>`;
     }).join('');
   }
 
   function renderTable(players) {
-    let html = '';
-    players.forEach((p, i) => {
-      const pos = fmt(p[C.POS]);
+    document.getElementById('tableBody').innerHTML = players.map((p, i) => {
+      const pos   = fmt(p[C.POS]);
       const nombre = fmt(p[C.NOMBRE]);
       const score = fmtScore(p[C.SCORE]);
-      const estado = fmt(p[C.ESTADO]);
-      const elim = isElim(estado);
       const delay = Math.min(i * 0.02, 0.5).toFixed(2);
 
-      const posDisplay = i === 0 ? '🥇' : i === 1 ? '🥈' : i === 2 ? '🥉' : `<span class="pos-num">${pos}</span>`;
+      const posHtml = i === 0 ? '<span class="pos-medal">🥇</span>'
+                    : i === 1 ? '<span class="pos-medal">🥈</span>'
+                    : i === 2 ? '<span class="pos-medal">🥉</span>'
+                    : `<span class="pos-num">${pos}</span>`;
 
-      // Jugadores asignados
-      const j1 = fmt(p[C.J1]);
-      const j2 = fmt(p[C.J2]);
-      const j3 = fmt(p[C.J3]);
-      const j4 = fmt(p[C.J4]);
+      // Parsear los 4 jugadores
+      const jugs = [p[C.J1], p[C.J2], p[C.J3], p[C.J4]].map(parseJugador);
 
-      // Resumen jugadores para fila cerrada
-      const jugadores = [j1,j2,j3,j4].filter(j => j !== '-').join(' · ');
+      const jugHtml = jugs.map(j => `
+        <div class="jug-cell">
+          <div class="jug-score ${scoreClass(j.score)}">${j.score !== '-' ? fmtScore(j.score) : '—'}</div>
+          <div class="jug-name">${j.name !== '-' ? j.name : '—'}</div>
+        </div>`).join('');
 
-      html += `
-        <div class="player-row${elim?' eliminado':''}" style="animation-delay:${delay}s" onclick="toggleDetail(${i})">
-          <div class="pos-cell">${posDisplay}</div>
-          <div class="info-cell">
-            <div class="player-name">${nombre}</div>
-            <div class="player-golfers">${jugadores}</div>
-          </div>
+      return `
+        <div class="player-row" style="animation-delay:${delay}s">
+          <div class="pos-cell">${posHtml}</div>
+          <div class="name-cell"><div class="player-name">${nombre}</div></div>
           <div class="score-cell-wrap">
-            <div class="score-pill ${scoreClass(p[C.SCORE])}">${score}</div>
+            <div class="score-pill ${scoreClass(fmtScore(p[C.SCORE]))}">${score}</div>
           </div>
-          <div class="estado-cell">
-            <div class="estado-badge ${elim?'eliminado':'en-carrera'}">${elim?'Eliminado':'En carrera'}</div>
-          </div>
-        </div>
-        <div class="detail-row" id="detail-${i}">
-          <div class="detail-grid">
-            <div class="detail-item">
-              <div class="detail-label">Jugador 1</div>
-              <div class="detail-golfer">${j1}</div>
-            </div>
-            <div class="detail-item">
-              <div class="detail-label">Jugador 2</div>
-              <div class="detail-golfer">${j2}</div>
-            </div>
-            <div class="detail-item">
-              <div class="detail-label">Jugador 3</div>
-              <div class="detail-golfer">${j3}</div>
-            </div>
-            <div class="detail-item">
-              <div class="detail-label">Jugador 4</div>
-              <div class="detail-golfer">${j4}</div>
-            </div>
-          </div>
+          ${jugHtml}
         </div>`;
-    });
-    document.getElementById('tableBody').innerHTML = html;
-  }
-
-  function toggleDetail(i) {
-    const el = document.getElementById('detail-' + i);
-    if (!el) return;
-    el.classList.toggle('open');
+    }).join('');
   }
 
   async function loadData() {
@@ -296,28 +259,29 @@
       const res = await fetch(SHEET_URL + '?t=' + Date.now());
       const raw = await res.json();
 
-      if (!raw || raw.length < 5) {
+      if (!raw || raw.length < 3) {
         document.getElementById('tableBody').innerHTML =
-          '<div class="error-box">Sin datos. Verificá que el Apps Script esté publicado correctamente.</div>';
+          '<div class="error-box">Sin datos. Verificá que el Apps Script lea la solapa "🥇 Posiciones".</div>';
         return;
       }
 
-      // Fila 1 (índice 0) = título, fila 2 = descripción, fila 3 = vacía, fila 4 = headers, fila 5+ = datos
-      // Buscar la primera fila con datos reales (donde col A tenga POS o un número/medalla)
-      let dataStart = 4; // índice 4 = fila 5 en sheets
+      // Encontrar la primera fila de datos (col A = "🥇", "1", o número)
+      let dataStart = 0;
       for (let i = 0; i < raw.length; i++) {
-        const first = String(raw[i][0] || '').trim();
-        if (first === '🥇' || first === '1' || (!isNaN(parseInt(first)) && parseInt(first) === 1)) {
+        const a = String(raw[i][0] || '').trim();
+        const b = String(raw[i][1] || '').trim();
+        // Fila de datos: col A tiene medalla o número, col B tiene nombre real
+        if ((a === '🥇' || a === '1' || (!isNaN(parseInt(a)) && b !== '' && b !== 'PARTICIPANTE')) && b !== '') {
           dataStart = i;
           break;
         }
       }
 
-      const players = raw.slice(dataStart).filter(r => String(r[C.NOMBRE]||'').trim() !== '');
+      const players = raw.slice(dataStart).filter(r => String(r[C.NOMBRE]||'').trim() !== '' && String(r[C.NOMBRE]||'').trim() !== 'PARTICIPANTE');
 
       if (!players.length) {
         document.getElementById('tableBody').innerHTML =
-          '<div class="error-box">No se encontraron participantes en la solapa "🥇 Posiciones".</div>';
+          '<div class="error-box">No se encontraron participantes.</div>';
         return;
       }
 
@@ -333,7 +297,7 @@
       document.getElementById('podium').innerHTML =
         `<div class="error-box" style="grid-column:1/-1">Error: ${e.message}</div>`;
       document.getElementById('tableBody').innerHTML =
-        `<div class="error-box">No se pudo conectar. Verificá que el Apps Script esté publicado como aplicación web accesible para "Cualquier persona".</div>`;
+        `<div class="error-box">No se pudo conectar con el sheet.</div>`;
     }
   }
 
